@@ -2,24 +2,23 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Homelen\Models\Provider;
+use Homelen\Models\User;
+use Homelen\Models\Utility;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // User::factory(10)->create();
+        User::factory(5)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        $providers = Provider::factory(5)->create();
+
+        foreach (range(1, 25) as $_) {
+            Utility::factory()->create([
+                'provider_id' => $providers->random()->id,
+            ]);
+        }
     }
 }
