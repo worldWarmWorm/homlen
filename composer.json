@@ -2,11 +2,7 @@
     "$schema": "https://getcomposer.org/schema.json",
     "name": "valery/homelen",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": [
-        "laravel",
-        "framework"
-    ],
+    "description": "App for calculating utility bills",
     "license": "MIT",
     "require": {
         "php": "^8.2",
