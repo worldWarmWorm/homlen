@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "valery/homelen",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
     "keywords": [
@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
+            "Homelen\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }
