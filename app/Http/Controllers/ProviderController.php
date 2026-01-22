@@ -17,4 +17,9 @@ final class ProviderController extends BaseController
     {
         return response()->json(['status' => 200, 'data' => Provider::all()->toArray()]);
     }
+
+    public function utilities(Request $request): JsonResponse
+    {
+        return response()->json(['status' => 200, 'data' => Provider::with('utilities')->get()->toArray()]);
+    }
 }

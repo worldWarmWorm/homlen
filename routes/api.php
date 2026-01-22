@@ -17,6 +17,7 @@ Route::get('/health-check', static function () {
 Route::group(['prefix' => 'provider'], static function () {
     Route::get('/main', [ProviderController::class, 'main'])->name('main');
     Route::get('/list', [ProviderController::class, 'list'])->name('list');
+    Route::get('/utilities', [ProviderController::class, 'utilities'])->name('utilities');
 });
 
 Route::group(['prefix' => 'utility'], static function () {
