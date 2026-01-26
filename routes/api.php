@@ -15,12 +15,13 @@ Route::get('/health-check', static function () {
 
 
 Route::group(['prefix' => 'provider'], static function () {
-    Route::get('/main', [ProviderController::class, 'main'])->name('main');
     Route::get('/list', [ProviderController::class, 'list'])->name('list');
-    Route::get('/utilities', [ProviderController::class, 'utilities'])->name('utilities');
+    Route::get('/{id}/show', [ProviderController::class, 'show'])->name('show');
+    Route::delete('/{id}/destroy', [ProviderController::class, 'destroy'])->name('destroy');
+    Route::post('/store', [ProviderController::class, 'store'])->name('store');
+    Route::put('/{id}/update', [ProviderController::class, 'update'])->name('update');
 });
 
 Route::group(['prefix' => 'utility'], static function () {
-    Route::get('/main', [UtilityController::class, 'main'])->name('main');
     Route::get('/list', [UtilityController::class, 'list'])->name('list');
 });
